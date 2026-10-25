@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b0b0b">
+    <meta name="description"
+          content="Explore the pencil sketches and traditional artwork of Rabesh.">
+
+    <title>RABESH® — Art Beyond Reality</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo">R<span>.</span></a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Artworks</a>
+            <a href="#upload">Add Art</a>
+        </div>
+
+        <a href="#gallery" class="nav-button">Explore Art ↗</a>
+    </nav>
+
+
+    <!-- Hero section -->
+    <header class="hero" id="home">
+
+        <div class="hero-top">
+            <span>INDEPENDENT ARTIST</span>
+            <span>EST. 2026 · INDIA</span>
+        </div>
+
+        <div class="hero-content">
+            <p class="eyebrow">
+                EVERY STROKE TELLS A STORY
+            </p>
+
+            <h1 class="hero-title">
+                ART BEYOND<br>
+                <span>REALITY.</span>
+            </h1>
+
+            <p class="hero-description">
+                A collection of thoughts, emotions and imagination
+                transformed into pencil strokes and timeless art.
+            </p>
+
+            <a href="#gallery" class="primary-button">
+                Discover my work <span>↘</span>
+            </a>
+        </div>
+
+        <div class="hero-bottom">
+            <span>01 — THE ARTIST'S SPACE</span>
+            <span class="scroll-text">SCROLL TO EXPLORE ↓</span>
+        </div>
+
+        <div class="hero-decoration">R</div>
+
+    </header>
+
+
+    <!-- About section -->
+    <section class="about section" id="about">
+
+        <div class="section-label">
+            <span>01 / ABOUT</span>
+            <span>A LITTLE ABOUT MY WORLD</span>
+        </div>
+
+        <div class="about-content">
+            <h2>
+                Not everything<br>
+                needs <em>words.</em>
+            </h2>
+
+            <div class="about-text">
+                <p>
+                    Welcome to my creative space. I'm Rabesh, and this
+                    is where imagination finds its form through art.
+                </p>
+
+                <p>
+                    From pencil sketches to traditional drawings,
+                    every piece captures a feeling, a moment, or an
+                    idea that deserves to exist beyond the mind.
+                </p>
+
+                <span class="signature">— Rabesh</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Gallery section -->
+    <section class="gallery-section section" id="gallery">
+
+        <div class="section-label">
+            <span>02 / SELECTED WORKS</span>
+            <span>MADE BY HAND · MADE WITH FEELING</span>
+        </div>
+
+        <div class="gallery-heading">
+            <h2>My <em>Artworks.</em></h2>
+            <p>Every piece has a story. Take a closer look.</p>
+        </div>
+
+        <div class="filter-bar" aria-label="Filter artworks">
+            <button class="filter-btn active" data-filter="All">All works</button>
+            <button class="filter-btn" data-filter="Pencil Sketch">Pencil sketches</button>
+            <button class="filter-btn" data-filter="Traditional Drawing">
+                Traditional art
+            </button>
+            <button class="filter-btn" data-filter="Other">Other</button>
+        </div>
+
+        <div class="art-grid" id="artGrid">
+
+            <!-- Uploaded artwork cards appear here -->
+
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <span class="empty-symbol">✳</span>
+            <h3>Your gallery starts here.</h3>
+            <p>
+                Every artist begins with a blank canvas.
+                Upload your first artwork to bring this space to life.
+            </p>
+            <a href="#upload" class="primary-button">
+                Add your first artwork ↗
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- Upload section -->
+    <section class="upload-section section" id="upload">
+
+        <div class="section-label">
+            <span>03 / ADD TO THE COLLECTION</span>
+            <span>YOUR ART · YOUR SPACE</span>
+        </div>
+
+        <div class="upload-layout">
+
+            <div class="upload-intro">
+                <p class="eyebrow">THE CREATIVE PROCESS</p>
+
+                <h2>
+                    Every blank<br>
+                    space is a<br>
+                    <em>possibility.</em>
+                </h2>
+
+                <p>
+                    Upload your sketches and drawings to build
+                    your personal collection.
+                </p>
+            </div>
+
+            <form class="upload-form" id="uploadForm">
+
+                <label class="field-label" for="artImage">
+                    ARTWORK IMAGE
+                </label>
+
+                <label class="drop-zone" for="artImage">
+                    <span class="upload-icon">↑</span>
+                    <strong id="fileLabel">Choose your artwork</strong>
+                    <span>Click to browse your computer</span>
+                    <small>JPG, PNG or WebP · Maximum 10 MB</small>
+                </label>
+
+                <input
+                    type="file"
+                    id="artImage"
+                    accept="image/jpeg,image/png,image/webp"
+                    required
+                    hidden
+                >
+
+                <div class="preview-container" id="previewContainer" hidden>
+                    <img id="imagePreview" alt="Selected artwork preview">
+                    <button type="button" id="removePreview" class="remove-preview">
+                        Remove image ×
+                    </button>
+                </div>
+
+                <label class="field-label" for="artTitle">
+                    ARTWORK TITLE
+                </label>
+
+                <input
+                    type="text"
+                    id="artTitle"
+                    placeholder="e.g. The Silent Soul"
+                    maxlength="80"
+                    required
+                >
+
+                <label class="field-label" for="artCategory">
+                    CATEGORY
+                </label>
+
+                <select id="artCategory" required>
+                    <option value="Pencil Sketch">Pencil Sketch</option>
+                    <option value="Traditional Drawing">
+                        Traditional Drawing
+                    </option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label class="field-label" for="artDescription">
+                    THE STORY BEHIND IT
+                </label>
+
+                <textarea
+                    id="artDescription"
+                    placeholder="Describe the inspiration behind your artwork..."
+                    maxlength="500"
+                    rows="3"
+                ></textarea>
+
+                <button type="submit" class="submit-button" id="publishButton">
+                    Add to my gallery <span>↗</span>
+                </button>
+
+                <p class="form-note" id="formMessage" aria-live="polite">
+                    Your artwork will be saved in this browser.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-top">
+            <h2>MAKE ART.<br><em>FEEL SOMETHING.</em></h2>
+
+            <a href="#home" class="back-to-top">
+                BACK TO TOP ↑
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 RABESH®</span>
+            <span>CREATED WITH IMAGINATION.</span>
+            <a href="#gallery">EXPLORE THE GALLERY ↗</a>
+        </div>
+
+    </footer>
+
+
+    <!-- Full-size artwork viewer -->
+    <dialog class="art-modal" id="artModal">
+
+        <button class="modal-close" id="modalClose" aria-label="Close artwork">
+            ×
+        </button>
+
+        <img id="modalImage" alt="Full-size artwork">
+
+        <div class="modal-info">
+            <span id="modalCategory"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+
+    </dialog>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
